@@ -8,7 +8,7 @@ pnums1=$02
 pres=$04    ; out
 plen=$06
 res=$1000
-    ldx $FF
+    ldx #$FF
     txs
 
     lda #<nums0

@@ -21,7 +21,7 @@ m_roty LABEL DWORD  ; 45 degree
 m_rotz LABEL DWORD  ; -60 degree
     DD 0.5,  -0.866, 0.0,   0.0
     DD 0.866, 0.5,   0.0,   0.0
-    DD 0.0,   0.0,   0.0,   0.0
+    DD 0.0,   0.0,   1.0,   0.0
     DD 0.0,   0.0,   0.0,   1.0
 m_trans LABEL DWORD ; (-12.5,460, 12.3)
     DD 1.0,   0.0,   0.0,   0.0

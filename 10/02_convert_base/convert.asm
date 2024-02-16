@@ -8,7 +8,7 @@ TITLE Convert Hex to Binary
 .DATA
 NUM_DIGITS EQU 4
 BUFSIZE    EQU NUM_DIGITS+1
-newline    DB 0Ah, 0Dh, '$'
+newline    DB 0Dh, 0Ah, '$'
 prompt     DB "Enter 4-digit hex number: $"
 buffer_in  DB BUFSIZE
            DB BUFSIZE+1 DUP(?)
