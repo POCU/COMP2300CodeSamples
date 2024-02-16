@@ -45,7 +45,7 @@ out=$4000
 
     ; 6. neg + neg (overflow)
     lda #%10011100  ; -100
-    adc #%11100011  ; -28
+    adc #%11100011  ; -29
     sta out
 
     clc
