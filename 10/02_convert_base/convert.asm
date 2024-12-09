@@ -22,19 +22,19 @@ lookup     DB "0000", "0001", "0010", "0011",
 .CODE
 .STARTUP
 ; print str to the console
-printstr MACRO str ;(str) <ah,dx>
+PRINTSTR MACRO str ;(str) <ah,dx>
     lea dx, str
     mov ah, 9h
     int 21h
 ENDM
 
-    printstr prompt
+    PRINTSTR prompt
 
     lea dx, buffer_in
     mov ah, 0Ah
     int 21h
 
-    printstr newline
+    PRINTSTR newline
 
     cld
     mov ax, 0
@@ -72,7 +72,7 @@ is_numeric:
 print_result:
     mov BYTE PTR [di], '$'
 
-    printstr result
+    PRINTSTR result
 
     mov ah, 4Ch
     xor al, al
