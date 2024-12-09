@@ -48,7 +48,7 @@ world_pts DD NUM_POINTS*4 DUP(?)
 
 ; Multiples two matrices
 ; (res,m0,m1) <ax,bx,cx,si,di,flags,res>
-concat MACRO res, m0, m1
+CONCAT MACRO res, m0, m1
     LOCAL row_loop, col_loop
 
     mov  bx, OFFSET res
@@ -94,7 +94,7 @@ ENDM
 
 ; Multiplies a vector and a matrix
 ; (res,vec,mat) <ax,bx,cx,si,di,flags,res>
-tx MACRO res, vec, mat
+TX MACRO res, vec, mat
     LOCAL loop_col
 
     mov  bx, OFFSET res
@@ -132,14 +132,14 @@ ENDM
 .STARTUP
     finit
 
-    concat m_world, m_rotx,  m_roty
-    concat m_tmp,   m_world, m_rotz
-    concat m_world, m_tmp,   m_trans
+    CONCAT m_world, m_rotx,  m_roty
+    CONCAT m_tmp,   m_world, m_rotz
+    CONCAT m_world, m_tmp,   m_trans
 
-    tx world_pts[0], local_pts[0], m_world
-    tx world_pts[1], local_pts[1], m_world
-    tx world_pts[2], local_pts[2], m_world
-    tx world_pts[3], local_pts[3], m_world
+    TX world_pts[0], local_pts[0], m_world
+    TX world_pts[1], local_pts[1], m_world
+    TX world_pts[2], local_pts[2], m_world
+    TX world_pts[3], local_pts[3], m_world
 
     mov ah, 4Ch
     xor al, al

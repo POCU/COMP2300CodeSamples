@@ -12,14 +12,14 @@ res DW ?
 .CODE
 .STARTUP
 ; Calculates the sum from 1 to n
-sum MACRO n ; (n) -> ax | <flags>
+SUM MACRO n ; (n) -> ax | <flags>
     mov ax, n
     inc ax
     imul n
     sar ax, 1
 ENDM
     
-    sum num
+    SUM num
 
     mov res, ax
 
